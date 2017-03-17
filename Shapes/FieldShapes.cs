@@ -33,13 +33,54 @@ namespace Morphous.FormsApi.Shapes {
 
         [Shape(bindingType: "Translate")]
         public void Fields_Boolean__api__Forms(dynamic Display, dynamic Shape, TextWriter Output) {
-            using (Display.ViewDataContainer.Model.Node(Shape.ContentField.FieldDefinition.Name)) {
-                bool? booleanValue = Shape.ContentField.Value;
+            using (Display.ViewDataContainer.Model.Node("a-list-item")) {
+                Display.ViewDataContainer.Model.Set("Type", Shape.ContentField.FieldDefinition.Name);
                 Display.ViewDataContainer.Model.Set("Name", Shape.ContentField.Name);
+                bool? booleanValue = Shape.ContentField.Value;
                 Display.ViewDataContainer.Model.Set("Value", booleanValue.HasValue ? booleanValue.Value : booleanValue);
             }
         }
 
+
+        [Shape(bindingType: "Translate")]
+        public void Fields_MediaLibraryPicker__api__Forms(dynamic Display, dynamic Shape)
+        {
+            using (Display.ViewDataContainer.Model.Node("a-list-item"))
+            {
+                Display.ViewDataContainer.Model.Set("Type", Shape.ContentField.FieldDefinition.Name);
+                Display.ViewDataContainer.Model.Set("Name", Shape.ContentField.Name);
+
+                using (Display.ViewDataContainer.Model.List("Media"))
+                {
+                    using (_alterations.Value.CreateScope("Translate"))
+                    {
+                        foreach (var item in Shape.ContentField.MediaParts)
+                        {
+                            Display(_contentManager.Value.BuildDisplay(item, "Summary"));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void Fields_MediaLibraryPicker__api__Flat(dynamic Display, dynamic Shape)
+        {
+            var field = Shape.ContentField;
+            string name = field.DisplayName;
+            var contents = field.MediaParts;
+            var mediaShapes = new List<dynamic>();
+
+            using (Display.ViewDataContainer.Model.List(Shape.ContentField))
+            {
+                using (_alterations.Value.CreateScope("Translate"))
+                {
+                    foreach (var item in contents)
+                    {
+                        Display(_contentManager.Value.BuildDisplay(item, "Summary"));
+                    }
+                }
+            }
+        }
 
 
         // Not in the forms format yet
@@ -109,26 +150,6 @@ namespace Morphous.FormsApi.Shapes {
             }
 
             Display.ViewDataContainer.Model.Set(Shape.ContentField.Name, translatedValues);
-        }
-
-        [Shape(bindingType: "Translate")]
-        public void Fields_MediaLibraryPicker__api__Forms(dynamic Display, dynamic Shape) {
-            Fields_MediaLibraryPicker__api__Flat(Display, Shape);
-        }
-        
-        private void Fields_MediaLibraryPicker__api__Flat(dynamic Display, dynamic Shape) {
-            var field = Shape.ContentField;
-            string name = field.DisplayName;
-            var contents = field.MediaParts;
-            var mediaShapes = new List<dynamic>();
-
-            using (Display.ViewDataContainer.Model.List(Shape.ContentField)) {
-                using (_alterations.Value.CreateScope("Translate")) {
-                    foreach (var item in contents) {
-                        Display(_contentManager.Value.BuildDisplay(item, "Summary"));
-                    }
-                }
-            }
         }
 
         [Shape(bindingType: "Translate")]

@@ -74,6 +74,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shapes\CoreShapes.cs" />
     <Compile Include="Shapes\FieldShapes.cs" />
+    <Compile Include="Shapes\MediaShapes.cs" />
+    <Compile Include="Shapes\TaxonomyShapes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets.json" />
