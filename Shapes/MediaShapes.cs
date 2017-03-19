@@ -24,20 +24,21 @@ namespace Morphous.FormsApi.Shapes
         {
             using (Display.ViewDataContainer.Model.Node("a-list-item"))
             {
+                Display.ViewDataContainer.Model.Id = Shape.ContentItem.Id;
                 Display.ViewDataContainer.Model.ContentType = Shape.ContentItem.ContentType;
                 Display.ViewDataContainer.Model.DisplayType = Shape.Metadata.DisplayType;
 
-                if (Shape.Meta != null)
+                foreach (var value in Shape.Properties.Values)
                 {
-                    Display(Shape.Meta);
-                }
+                    if (value is IShape)
+                    {
+                        var shape = (dynamic)value;
 
-                Display(Shape.Header);
-                Display(Shape.Content);
-
-                if (Shape.Footer != null)
-                {
-                    Display(Shape.Footer);
+                        if (shape.Metadata.Type == "ContentZone" && shape.ZoneName != "Child")
+                        {
+                            Display(shape);
+                        }
+                    }
                 }
             }
         }

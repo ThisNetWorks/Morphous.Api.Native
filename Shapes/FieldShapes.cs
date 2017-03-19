@@ -56,7 +56,8 @@ namespace Morphous.FormsApi.Shapes {
                     {
                         foreach (var item in Shape.ContentField.MediaParts)
                         {
-                            Display(_contentManager.Value.BuildDisplay(item, "Summary"));
+                            var mediaShape = _contentManager.Value.BuildDisplay(item, "Summary");
+                            Display(mediaShape);
                         }
                     }
                 }

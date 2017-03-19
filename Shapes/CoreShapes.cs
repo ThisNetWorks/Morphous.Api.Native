@@ -21,6 +21,7 @@ namespace Morphous.FormsApi.Shapes {
         {
             using (Display.ViewDataContainer.Model.Node("Content"))
             {
+                Display.ViewDataContainer.Model.Id = Shape.ContentItem.Id;
                 Display.ViewDataContainer.Model.ContentType = Shape.ContentItem.ContentType;
                 Display.ViewDataContainer.Model.DisplayType = Shape.Metadata.DisplayType;
                 
