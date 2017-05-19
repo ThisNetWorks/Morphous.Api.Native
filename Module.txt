@@ -1,8 +1,8 @@
-﻿Name: Morphous Forms API
+﻿Name: Morphous Native API
 AntiForgery: enabled
 Author: Morphous
 Website: http://orchardproject.net
 Version: 1.0
 OrchardVersion: 1.0
-Description: Serializes content for use by Morphous.Forms
+Description: Serializes content for use by Morphous.Native
 Category: API

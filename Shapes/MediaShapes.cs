@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace Morphous.FormsApi.Shapes
+namespace Morphous.Api.Native.Shapes
 {
     public class MediaShapes : ApiShapesBase, IShapeTableProvider
     {

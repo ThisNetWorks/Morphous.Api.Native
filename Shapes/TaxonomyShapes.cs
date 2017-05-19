@@ -6,7 +6,7 @@ using Morphous.Api;
 using Orchard.DisplayManagement;
 using Orchard.DisplayManagement.Descriptors;
 
-namespace Morphous.FormsApi.Shapes {
+namespace Morphous.Api.Native.Shapes {
     public class TaxonomyShapes : ApiShapesBase, IShapeTableProvider {
 
         public void Discover(ShapeTableBuilder builder) {

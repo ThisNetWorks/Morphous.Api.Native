@@ -9,7 +9,7 @@ using Orchard.DisplayManagement;
 using Orchard.DisplayManagement.Descriptors;
 using System.Collections.Specialized;
 
-namespace Morphous.FormsApi.Shapes {
+namespace Morphous.Api.Native.Shapes {
     public class CoreShapes : ApiShapesBase, IShapeTableProvider {
 
         public void Discover(ShapeTableBuilder builder) {

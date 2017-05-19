@@ -11,7 +11,7 @@ using Orchard.Environment;
 using Orchard.Fields.Settings;
 using Orchard.Localization;
 
-namespace Morphous.FormsApi.Shapes {
+namespace Morphous.Api.Native.Shapes {
     public class FieldShapes : ApiShapesBase, IShapeTableProvider {
         private readonly Work<IContentManager> _contentManager;
         private readonly Work<IBindingTypeCreateAlterations> _alterations;
