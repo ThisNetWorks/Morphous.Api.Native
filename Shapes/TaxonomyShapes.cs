@@ -13,7 +13,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Parts_TaxonomyPart__api__Forms(dynamic Display, dynamic Shape) {
+        public void Parts_TaxonomyPart__api__Native(dynamic Display, dynamic Shape) {
 
             using (Display.ViewDataContainer.Model.Node("a-list-item")) {
                 Display.ViewDataContainer.Model.Type = Shape.ContentPart.PartDefinition.Name;
@@ -23,7 +23,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         //[Shape(bindingType: "Translate")]
-        //public void Taxonomy__api__Forms(dynamic Display, dynamic Shape)
+        //public void Taxonomy__api__Native(dynamic Display, dynamic Shape)
         //{
         //    using (Display.ViewDataContainer.Model.List("Terms"))
         //    {
@@ -35,14 +35,14 @@ namespace Morphous.Api.Native.Shapes {
         //}
 
         //[Shape(bindingType: "Translate")]
-        //public void TaxonomyItem__api__Forms(dynamic Display, dynamic Shape)
+        //public void TaxonomyItem__api__Native(dynamic Display, dynamic Shape)
         //{
         //    Shape.Metadata.Type = "Content";
         //    Display(Shape);
         //}
 
         [Shape(bindingType: "Translate")]
-        public void Parts_TermPart__api__Forms(dynamic Display, dynamic Shape) {
+        public void Parts_TermPart__api__Native(dynamic Display, dynamic Shape) {
 
             using (Display.ViewDataContainer.Model.Node("a-list-item")) {
                 Display.ViewDataContainer.Model.Type = Shape.ContentPart.PartDefinition.Name;

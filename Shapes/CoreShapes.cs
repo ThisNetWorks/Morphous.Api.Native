@@ -17,7 +17,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Content__api__Forms(dynamic Display, dynamic Shape)
+        public void Content__api__Native(dynamic Display, dynamic Shape)
         {
             using (Display.ViewDataContainer.Model.Node("Content"))
             {
@@ -42,7 +42,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void ContentZone__api__Forms(dynamic Display, dynamic Shape) {
+        public void ContentZone__api__Native(dynamic Display, dynamic Shape) {
 
             using (Display.ViewDataContainer.Model.List("Zones")) {
                 using (Display.ViewDataContainer.Model.Node("a-list-item")) {
@@ -60,7 +60,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void List__api__Forms(dynamic Display, dynamic Shape) {
+        public void List__api__Native(dynamic Display, dynamic Shape) {
             using (Display.ViewDataContainer.Model.List("Items")) {
                 foreach (var item in ((IEnumerable<dynamic>)Shape.Items)) {
                     Display(item);
@@ -71,7 +71,7 @@ namespace Morphous.Api.Native.Shapes {
 
         // TitlePart
         [Shape(bindingType: "Translate")]
-        public void Parts_Title__api__Forms(dynamic Display, dynamic Shape) {
+        public void Parts_Title__api__Native(dynamic Display, dynamic Shape) {
             using (Display.ViewDataContainer.Model.Node("a-list-item")) {
                 Display.ViewDataContainer.Model.Type = Shape.ContentPart.PartDefinition.Name;
                 Display.ViewDataContainer.Model.Title = Shape.Title;
@@ -79,13 +79,13 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Parts_Title_Summary__api__Forms(dynamic Display, dynamic Shape) {
-            Parts_Title__api__Forms(Display, Shape);
+        public void Parts_Title_Summary__api__Native(dynamic Display, dynamic Shape) {
+            Parts_Title__api__Native(Display, Shape);
         }
 
         // BodyPart
         [Shape(bindingType: "Translate")]
-        public void Parts_Common_Body__api__Forms(dynamic Display, dynamic Shape) {
+        public void Parts_Common_Body__api__Native(dynamic Display, dynamic Shape) {
             using (Display.ViewDataContainer.Model.Node("a-list-item")) {
                 Display.ViewDataContainer.Model.Type = Shape.ContentPart.PartDefinition.Name;
                 Display.ViewDataContainer.Model.Html = Shape.Html.ToString();
@@ -93,13 +93,13 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Parts_Common_Body_Summary__api__Forms(dynamic Display, dynamic Shape) {
-            Parts_Common_Body__api__Forms(Display, Shape);
+        public void Parts_Common_Body_Summary__api__Native(dynamic Display, dynamic Shape) {
+            Parts_Common_Body__api__Native(Display, Shape);
         }
 
         // MetadataPart
         [Shape(bindingType: "Translate")]
-        public void Parts_Common_Metadata__api__Forms(dynamic Display, dynamic Shape) {
+        public void Parts_Common_Metadata__api__Native(dynamic Display, dynamic Shape) {
             System.Web.Mvc.UrlHelper urlHelper = new System.Web.Mvc.UrlHelper(Display.ViewContext.RequestContext);
 
             using (Display.ViewDataContainer.Model.Node("a-list-item")) {
@@ -112,8 +112,8 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Parts_Common_Metadata_Summary__api__Forms(dynamic Display, dynamic Shape) {
-            Parts_Common_Metadata__api__Forms(Display, Shape);
+        public void Parts_Common_Metadata_Summary__api__Native(dynamic Display, dynamic Shape) {
+            Parts_Common_Metadata__api__Native(Display, Shape);
         }
     }
 }

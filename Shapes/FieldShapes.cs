@@ -32,7 +32,7 @@ namespace Morphous.Api.Native.Shapes {
 
 
         [Shape(bindingType: "Translate")]
-        public void Fields_Boolean__api__Forms(dynamic Display, dynamic Shape, TextWriter Output) {
+        public void Fields_Boolean__api__Native(dynamic Display, dynamic Shape, TextWriter Output) {
             using (Display.ViewDataContainer.Model.Node("a-list-item")) {
                 Display.ViewDataContainer.Model.Set("Type", Shape.ContentField.FieldDefinition.Name);
                 Display.ViewDataContainer.Model.Set("Name", Shape.ContentField.Name);
@@ -43,7 +43,7 @@ namespace Morphous.Api.Native.Shapes {
 
 
         [Shape(bindingType: "Translate")]
-        public void Fields_MediaLibraryPicker__api__Forms(dynamic Display, dynamic Shape)
+        public void Fields_MediaLibraryPicker__api__Native(dynamic Display, dynamic Shape)
         {
             using (Display.ViewDataContainer.Model.Node("a-list-item"))
             {
@@ -86,14 +86,14 @@ namespace Morphous.Api.Native.Shapes {
 
         // Not in the forms format yet
         [Shape(bindingType: "Translate")]
-        public void Fields_Common_Text__api__Forms(dynamic Display, dynamic Shape) {
+        public void Fields_Common_Text__api__Native(dynamic Display, dynamic Shape) {
             using (Display.ViewDataContainer.Model.Node(Shape.ContentField)) {
                 Display.ViewDataContainer.Model.Set(Shape.ContentField.Name, Shape.Value.ToString());
             }
         }
 
         [Shape(bindingType: "Translate")]
-        public void Fields_Input__api__Forms(dynamic Display, dynamic Shape) {
+        public void Fields_Input__api__Native(dynamic Display, dynamic Shape) {
             using (Display.ViewDataContainer.Model.Node(Shape.ContentField)) {
                 Display.ViewDataContainer.Model.Value = Shape.Value;
             }
@@ -104,7 +104,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Fields_DateTime__api__Forms(dynamic Display, dynamic Shape) {
+        public void Fields_DateTime__api__Native(dynamic Display, dynamic Shape) {
             using (Display.ViewDataContainer.Model.Node(Shape.ContentField)) {
                 Display.ViewDataContainer.Model.Value = Shape.ContentField.DateTime;
             }
@@ -115,7 +115,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Fields_Numeric__api__Forms(dynamic Display, dynamic Shape) {
+        public void Fields_Numeric__api__Native(dynamic Display, dynamic Shape) {
             using (Display.ViewDataContainer.Model.Node(Shape.ContentField)) {
                 Display.ViewDataContainer.Model.Value = Shape.Value;
             }
@@ -126,7 +126,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Fields_Enumeration__api__Forms(dynamic Display, dynamic Shape) {
+        public void Fields_Enumeration__api__Native(dynamic Display, dynamic Shape) {
 
             string valueToDisplay = string.Empty;
             string[] selectedValues = Shape.ContentField.SelectedValues;
@@ -154,7 +154,7 @@ namespace Morphous.Api.Native.Shapes {
         }
 
         [Shape(bindingType: "Translate")]
-        public void Fields_Link__api__Forms(dynamic Display, dynamic Shape) {
+        public void Fields_Link__api__Native(dynamic Display, dynamic Shape) {
                 Fields_Link__api__Flat(Display, Shape);
         }
         

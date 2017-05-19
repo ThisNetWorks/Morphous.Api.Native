@@ -20,7 +20,7 @@ namespace Morphous.Api.Native.Shapes
         }
 
         [Shape(bindingType: "Translate")]
-        public void Media__api__Forms(dynamic Display, dynamic Shape, TextWriter Output)
+        public void Media__api__Native(dynamic Display, dynamic Shape, TextWriter Output)
         {
             using (Display.ViewDataContainer.Model.Node("a-list-item"))
             {
@@ -44,7 +44,7 @@ namespace Morphous.Api.Native.Shapes
         }
 
         [Shape(bindingType: "Translate")]
-        public void Parts_Image__api__Forms(dynamic Display, dynamic Shape, TextWriter Output)
+        public void Parts_Image__api__Native(dynamic Display, dynamic Shape, TextWriter Output)
         {
             using (Display.ViewDataContainer.Model.Node("a-list-item"))
             {
@@ -59,9 +59,9 @@ namespace Morphous.Api.Native.Shapes
         }
 
         [Shape(bindingType: "Translate")]
-        public void Parts_Image_Summary__api__Forms(dynamic Display, dynamic Shape, TextWriter Output)
+        public void Parts_Image_Summary__api__Native(dynamic Display, dynamic Shape, TextWriter Output)
         {
-            Parts_Image__api__Forms(Display, Shape, Output);
+            Parts_Image__api__Native(Display, Shape, Output);
         }
 
     }
