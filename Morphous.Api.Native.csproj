@@ -75,6 +75,7 @@
     <Compile Include="Shapes\CoreShapes.cs" />
     <Compile Include="Shapes\FieldShapes.cs" />
     <Compile Include="Shapes\MediaShapes.cs" />
+    <Compile Include="Shapes\CommentsShapes.cs" />
     <Compile Include="Shapes\TaxonomyShapes.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +102,10 @@
     <ProjectReference Include="..\Morphous.Api\Morphous.Api.csproj">
       <Project>{CE4CCC44-ABD8-4C0A-8749-78FF24D22916}</Project>
       <Name>Morphous.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard.Comments\Orchard.Comments.csproj">
+      <Project>{14c049fd-b35b-415a-a824-87f26b26e7fd}</Project>
+      <Name>Orchard.Comments</Name>
     </ProjectReference>
     <ProjectReference Include="..\Orchard.Fields\Orchard.Fields.csproj">
       <Project>{3787DDE5-E5C8-4841-BDA7-DCB325388064}</Project>
